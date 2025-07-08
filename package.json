@@ -41,9 +41,9 @@
     "docs:build": "vitepress build docs",
     "docs:dev": "vitepress dev docs",
     "docs:preview": "vitepress preview docs",
-    "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{vue,js,ts,tsx}\" --fix",
+    "lint:eslint": "eslint --max-warnings 0  \"src/**/*.{vue,js,ts,tsx}\" --fix",
     "lint:format": "prettier --write .",
-    "lint:style": "stylelint --cache --fix \"src/**/*.{html,vue,css,less}\" --cache-location node_modules/.cache/stylelint/",
+    "lint:style": "stylelint --fix \"src/**/*.{html,vue,css,less}\" --cache-location node_modules/.cache/stylelint/",
     "play": "vite ./play",
     "prepare": "husky install",
     "typecheck": "vue-tsc --noEmit"

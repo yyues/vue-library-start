@@ -1,5 +1,7 @@
 # Vue-library-start
 
+[文档](https://yyues.github.io/vue-library-start/)
+
 ## 概述
 
 本项目是一个基于 Vite 和 pnpm 等工具搭建的快速组件库开发架构。借助 Vite 的高效开发服务器和构建能力，以及 pnpm 的高效依赖管理，能帮助开发者快速搭建和开发 Vue 组件库。
@@ -72,8 +74,9 @@ pnpm docs:dev
 
 1. 在 `src/` 目录下创建新组件文件夹（如 `src/button`）
 2. 添加组件实现文件 `index.tsx` 和类型定义 `interface.d.ts`
-3. 在 `src/components.ts` 中注册组件
-4. 在 `play/src/App.vue` 中添加演示代码
+3. 在 `src/components.ts` 中导入新开发组件
+4. 运行 `pnpm run build:watch`
+5. 在 `play/src/App.vue` 中添加演示代码
 
 ## 构建与发布
 

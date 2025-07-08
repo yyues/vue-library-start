@@ -3,6 +3,8 @@ name: Deploy Vue to GitHub Pages
 on:
   push:
     branches: [master] # 当 main 分支有更新时触发
+    paths:
+      - 'docs/**' # 仅当 docs 目录下文件有变更时触发
 
 jobs:
   build-and-deploy:

@@ -8,7 +8,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '教程', link: '/markdown-examples' },
+      { text: '教程', link: '/getting-started' },
     ],
 
     sidebar: [
@@ -37,4 +37,8 @@ export default defineConfig({
       port: 10024,
     },
   },
+  base:
+    process.env.NODE_ENV === 'production'
+      ? '/vue-library-start/' // 替换为你的仓库名
+      : '/',
 });

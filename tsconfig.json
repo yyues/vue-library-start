@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "baseUrl": "./",
+    "types": ["node"],
+    "paths": {
+      "x-library": ["src/index.ts"],
+      "x-library/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"]
+}

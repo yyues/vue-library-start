@@ -1,0 +1,109 @@
+{
+  "name": "x-library",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./typings/index.d.ts",
+      "import": "./es/index.mjs",
+      "require": "./lib/index.js"
+    },
+    "./dist/style.css": "./dist/style.css",
+    "./es/*": {
+      "types": "./typings/*/index.d.ts",
+      "import": "./es/*/index.mjs",
+      "require": "./lib/*/index.js"
+    },
+    "./resolver": {
+      "types": "./resolver-dist/index.d.ts",
+      "import": "./resolver-dist/index.js",
+      "require": "./resolver-dist/index.js"
+    }
+  },
+  "main": "./lib/index.js",
+  "unpkg": "./dist/index.umd.js",
+  "module": "./es/index.mjs",
+  "types": "./typings/index.d.ts",
+  "files": [
+    "es",
+    "lib",
+    "dist",
+    "typings",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "run-p build:es build:dist build:resolver",
+    "build:dist": "vite build --config ./vite.config.dist.mts && vue-tsc --project ./tsconfig.build.json",
+    "build:es": "vite build && vue-tsc --project ./tsconfig.build.json",
+    "build:resolver": "tsc resolver/index.ts --outDir resolver-dist --declaration",
+    "build:watch": "vite build --watch",
+    "docs:build": "vitepress build docs",
+    "docs:dev": "vitepress dev docs",
+    "docs:preview": "vitepress preview docs",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{vue,js,ts,tsx}\" --fix",
+    "lint:format": "prettier --write .",
+    "lint:style": "stylelint --cache --fix \"src/**/*.{html,vue,css,less}\" --cache-location node_modules/.cache/stylelint/",
+    "play": "vite ./play",
+    "prepare": "husky install",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@types/node": "^24.0.10",
+    "@typescript-eslint/eslint-plugin": "^8.36.0",
+    "@typescript-eslint/parser": "^8.36.0",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-define-config": "^2.1.0",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-vue": "^9.33.0",
+    "glob": "^11.0.3",
+    "husky": "^9.1.7",
+    "less": "^4.3.0",
+    "npm-run-all2": "^8.0.4",
+    "prettier": "^3.0.0",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^35.0.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.36.0",
+    "vite": "^7.0.0",
+    "vitepress": "^1.6.3",
+    "vue-eslint-parser": "^10.2.0",
+    "vue-tsc": "^2.2.10"
+  },
+  "peerDependencies": {
+    "ant-design-vue": ">=3.2.20",
+    "vue": ">=3.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./typings",
+    "lib": ["esnext", "dom"],
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "baseUrl": "./",
+    "types": ["node"],
+    "paths": {
+      "x-library": ["src/index.ts"],
+      "x-library/*": ["src/*"],
+      "x-library/resolver/*": ["src/resolver/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["src/**/__tests__/**/*"]
+}

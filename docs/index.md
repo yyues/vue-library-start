@@ -15,12 +15,12 @@ hero:
       link: https://github.com/yyues/vue-library-start
 
 features:
-  - title: 技术先进
-    details: 基于 Vite 构建，支持 Vue 3 单文件组件（SFC）和 Vue 2 选项式组件
-  - title: TS完善
-    details: 提供完整的 TS 支持，支持 TSX 语法
-  - title: 快速开发
-    details: 快速拉取代码，稍作调整即可投入使用
-  - title: 良好的测试
-    details: 提供完善的测试用例，确保组件的质量
+  - title: Vite驱动
+    details: 冷启动仅需3秒，热更新即时响应
+  - title: pnpm管理
+    details: 节省50%磁盘空间，安装速度快3倍
+  - title: 多格式输出
+    details: 支持ESM、CJS、UMD多种格式
+  - title: 质量保障
+    details: 内置ESLint、StyleLint和TypeScript检查
 ---

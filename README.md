@@ -43,7 +43,6 @@ app.use(XLibrary);
 
 // 按需引入
 import { Avatar } from 'x-library';
-import 'x-library/es/avatar/style/css';
 ```
 
 ### 使用示例

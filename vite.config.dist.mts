@@ -28,7 +28,12 @@ export default defineConfig({
           name: 'x-library',
           entryFileNames: '[name].umd.js',
           globals: { vue: 'Vue' },
-          assetFileNames: 'style.css',
+          assetFileNames: (v) => {
+            if (v.names.toString().includes('css')) {
+              return 'style.css';
+            }
+            return 'assets/[name].[ext]';
+          },
         },
         {
           format: 'es',
@@ -37,7 +42,12 @@ export default defineConfig({
           exports: 'named',
           entryFileNames: '[name].esm.js',
           globals: { vue: 'Vue' },
-          assetFileNames: 'style.css',
+          assetFileNames: (v) => {
+            if (v.names.toString().includes('css')) {
+              return 'style.css';
+            }
+            return 'assets/[name].[ext]';
+          },
         },
       ],
     },

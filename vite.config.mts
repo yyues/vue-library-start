@@ -48,7 +48,12 @@ export default defineConfig({
           },
           chunkFileNames: (chunkInfo) => `${chunkInfo.name}2.mjs`,
           globals: { vue: 'Vue', 'ant-design-vue': 'antd' },
-          assetFileNames: 'style.css',
+          assetFileNames: (v) => {
+            if (v.names.toString().includes('css')) {
+              return 'style.css';
+            }
+            return 'assets/[name].[ext]';
+          },
         },
         {
           format: 'cjs',
@@ -65,7 +70,12 @@ export default defineConfig({
           chunkFileNames: (chunkInfo) => `${chunkInfo.name}2.js`,
           exports: 'named',
           globals: { vue: 'Vue', 'ant-design-vue': 'antd' },
-          assetFileNames: 'style.css',
+          assetFileNames: (v) => {
+            if (v.names.toString().includes('css')) {
+              return 'style.css';
+            }
+            return 'assets/[name].[ext]';
+          },
         },
       ],
     },

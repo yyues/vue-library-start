@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
-import { Avatar } from 'x-library';
+import { Avatar, ImgUrl } from 'x-library';
 </script>
 
 <template>
   <div>
+    <!-- <Avatar style="width: 120px; height: 60px" :src="ImgUrl"></Avatar> -->
     <Avatar
       prefix="https://avatars.githubusercontent.com"
       src="/u/19205482?v=4"

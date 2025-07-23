@@ -6,6 +6,8 @@ hero:
   name: 'Vue-library-start'
   text: '基于 vite 的 二次组件库开发框架'
   tagline: 即可基于vue直接构建开发，也可用于二次UI库封装
+  image:
+    src: /home.png
   actions:
     - theme: brand
       text: 教程

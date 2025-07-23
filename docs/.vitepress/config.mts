@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress';
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Vue-library-start',
+  head: [['link', { rel: 'icon', href: 'home.png' }]],
   description: '基于 vite 的 二次组件库开发框架',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -10,6 +11,8 @@ export default defineConfig({
       { text: '首页', link: '/' },
       { text: '教程', link: '/getting-started' },
     ],
+
+    logo: '/home.png',
 
     sidebar: [
       {

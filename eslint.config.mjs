@@ -8,6 +8,7 @@ import pluginVue from 'eslint-plugin-vue';
 import * as parserVue from 'vue-eslint-parser';
 
 export default defineFlatConfig([
+  { ignores: ['typings/**/*'] },
   {
     ...js.configs.recommended,
     ignores: [

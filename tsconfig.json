@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "allowJs": true,
     "declaration": true,
-    "skipLibCheck": true,
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "moduleResolution": "node",
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "strict": true,
     "strictNullChecks": false,
+
     "baseUrl": "./",
     "types": ["node"],
+    "target": "es2015",
     "paths": {
       "x-library": ["src/index.ts"],
       "x-library/*": ["src/*"]

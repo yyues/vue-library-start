@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "allowJs": true,
+    "noImplicitAny": false,
     "strict": true,
     "declaration": true,
     "skipLibCheck": true,
@@ -12,6 +14,7 @@
     "moduleResolution": "node",
     "strictNullChecks": false,
     "baseUrl": "./",
+    "target": "es2015",
     "types": ["node"],
     "paths": {
       "x-library": ["src/index.ts"],

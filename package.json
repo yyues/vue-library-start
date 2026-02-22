@@ -1,7 +1,6 @@
 {
   "name": "x-library",
   "version": "0.0.0",
-  "private": true,
   "license": "MIT",
   "exports": {
     ".": {
@@ -30,8 +29,14 @@
     "lib",
     "dist",
     "typings",
+    "resolver-dist",
     "LICENSE"
   ],
+  "sideEffects": [
+    "**/*.css",
+    "**/*.less"
+  ],
+  "packageManager": "pnpm@9.0.0",
   "scripts": {
     "build": "run-p build:es build:dist build:resolver",
     "build:dist": "vite build --config ./vite.config.dist.mts && vue-tsc --project ./tsconfig.build.json",

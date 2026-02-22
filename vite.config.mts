@@ -8,7 +8,7 @@ import { defineConfig } from 'vite';
 const externals = ['vue', 'ant-design-vue'];
 
 const input = Object.fromEntries(
-  globSync('src/**/*.*')
+  globSync(['src/index.ts', 'src/*/index.ts', 'src/*/index.tsx'])
     .filter((file) => !file.includes('test'))
     .map((file) => [
       // 删除 `src/` 以及每个文件的扩展名: src/nested/foo.js => nested/foo
@@ -46,7 +46,7 @@ export default defineConfig({
               return id.split('src/')[1].split('.vue')[0];
             }
           },
-          chunkFileNames: (chunkInfo) => `${chunkInfo.name}2.mjs`,
+          chunkFileNames: (chunkInfo) => `${chunkInfo.name}.mjs`,
           globals: { vue: 'Vue', 'ant-design-vue': 'antd' },
           assetFileNames: (v) => {
             if (v.names.toString().includes('css')) {
@@ -67,7 +67,7 @@ export default defineConfig({
               return id.split('src/')[1].split('.vue')[0];
             }
           },
-          chunkFileNames: (chunkInfo) => `${chunkInfo.name}2.js`,
+          chunkFileNames: (chunkInfo) => `${chunkInfo.name}.js`,
           exports: 'named',
           globals: { vue: 'Vue', 'ant-design-vue': 'antd' },
           assetFileNames: (v) => {

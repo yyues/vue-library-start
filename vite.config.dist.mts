@@ -3,7 +3,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
-const externals = ['vue'];
+const externals = ['vue', 'ant-design-vue'];
 
 export default defineConfig({
   define: {
@@ -18,7 +18,7 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: [...externals],
+      external: [...externals, /^ant-design-vue/],
       output: [
         {
           format: 'umd',
@@ -27,7 +27,7 @@ export default defineConfig({
           exports: 'named',
           name: 'x-library',
           entryFileNames: '[name].umd.js',
-          globals: { vue: 'Vue' },
+          globals: { vue: 'Vue', 'ant-design-vue': 'antd' },
           assetFileNames: (v) => {
             if (v.names.toString().includes('css')) {
               return 'style.css';
@@ -41,7 +41,7 @@ export default defineConfig({
           inlineDynamicImports: true,
           exports: 'named',
           entryFileNames: '[name].esm.js',
-          globals: { vue: 'Vue' },
+          globals: { vue: 'Vue', 'ant-design-vue': 'antd' },
           assetFileNames: (v) => {
             if (v.names.toString().includes('css')) {
               return 'style.css';

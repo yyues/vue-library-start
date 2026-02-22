@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue';
-import { Avatar, ImgUrl } from 'x-library';
+import { Avatar } from 'x-library';
 </script>
 
 <template>

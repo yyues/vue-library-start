@@ -16,12 +16,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18' # 使用你项目的 Node.js 版本
+          node-version: '20' # 使用你项目的 Node.js 版本
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 9.0.0
 
       - name: Get pnpm store directory
         id: pnpm-cache

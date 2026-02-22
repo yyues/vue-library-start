@@ -37,7 +37,7 @@ export const Avatar = defineComponent({
   inheritAttrs: false,
   props: sAvatarProps(),
   setup(props, { slots, attrs }) {
-    const prefix = props.prefix;
+    const prefix = props.prefix ?? '';
 
     const image = computed(() => {
       if (props.src && typeof props.src === 'function') {
